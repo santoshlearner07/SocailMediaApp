@@ -11,9 +11,9 @@ function NavbarFile() {
   const userName = user?.user_metadata.user_name || user?.email;
 
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" bg="dark" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="#">
           Social <span style={{ color: "peru" }}>App</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
