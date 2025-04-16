@@ -34,7 +34,7 @@ export const CreatePost = () => {
   const [content, setContent] = useState<string>("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
-  const { mutate } = useMutation({
+  const { mutate, isPending, isError } = useMutation({
     mutationFn: (data: { post: PostInput; imageFile: File }) => {
       return createPost(data.post, data.imageFile);
     },
@@ -85,8 +85,9 @@ export const CreatePost = () => {
           />
         </Form.Group>
         <Button variant="outline-info" type="submit">
-          Create Post
+            {isPending ? "Creating..." : "Create Post"}
         </Button>
+        {isError && <p>Error creating post.</p>}
       </Form>
     </Container>
   );

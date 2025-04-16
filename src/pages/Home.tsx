@@ -1,8 +1,14 @@
 import React from 'react'
+import { PostList } from '../components/PostList'
 
 function Home() {
   return (
-    <div>Home</div>
+    <div  className="text-center">
+      <h2>Recent Post</h2>
+      <div>
+        <PostList />
+      </div>
+    </div>
   )
 }
 
